@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Cost Predictor</title>
+    <style>
+        body {
+            background-color: #d8fbb2;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #333;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h3 {
+            text-align: center;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Medical Insurance Cost Predictor</h2>
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="number" name="age" required>
+
+            <label>Sex:</label>
+            <select name="sex" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label>BMI:</label>
+            <input type="number" name="bmi" step="0.1" required>
+
+            <label>Children:</label>
+            <input type="number" name="children" required>
+
+            <label>Smoker:</label>
+            <select name="smoker" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label>Region:</label>
+            <select name="region" required>
+                <option value="southwest">Southwest</option>
+                <option value="southeast">Southeast</option>
+                <option value="northwest">Northwest</option>
+                <option value="northeast">Northeast</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
