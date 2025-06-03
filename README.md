@@ -1,1 +1,1 @@
-Medical Insurance Predictor Model using Machine Learning
+Medical-Insurance-Predictor-Model-using-Machine-Learning
